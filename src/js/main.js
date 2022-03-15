@@ -4,7 +4,7 @@ const slides = document.querySelectorAll('.slider__img-inner');
 const btnPrev = document.querySelector('.btnPrev');
 const btnNext = document.querySelector('.btnNext');
 
-let slideIndex = 0;
+let slideIndex = 2;
 
 const showSlides = () => {
   slides.forEach(elem => (elem.style.display = 'none'));
@@ -21,6 +21,10 @@ btnPrev.addEventListener('click', () => {
   }
 });
 
-btnNext.addEventListener('click', () => {});
+btnNext.addEventListener('click', () => {
+  if (slideIndex < slides.length - 1) {
+    showSlides(slideIndex += 1);
+  }
+});
 
 showSlides(slideIndex);
