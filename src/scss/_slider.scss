@@ -1,0 +1,24 @@
+.slider {
+   &__inner {
+      padding-top: 100px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+   }
+   &__img-inner {}
+   &__img {
+      max-height: 600px;
+      border-radius: 10px;
+   }
+}
+.container {
+   max-width: 800px;
+}
+.slider__btn-inner {
+   display: flex;
+   justify-content: space-evenly;
+}
+.btnPrev {
+}
+.btnNext {
+}
