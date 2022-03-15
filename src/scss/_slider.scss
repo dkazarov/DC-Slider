@@ -12,7 +12,6 @@
     padding: 10% 0;
   }
   &__img-inner {
-
   }
   &__img {
     transition: 1s all;
@@ -46,6 +45,9 @@
     & path {
       fill: rgba(255, 255, 255, 0.5);
     }
+    & path:hover {
+      fill: #fff;
+    }
   }
 }
 .btnNext {
@@ -55,11 +57,16 @@
   right: 250px;
   background-color: transparent;
   border: none;
+  width: 48px;
+  height: 48px;
   & svg {
     width: 48px;
     height: 48px;
     & path {
       fill: rgba(255, 255, 255, 0.5);
+    }
+    & path:hover {
+      fill: #fff;
     }
   }
 }
