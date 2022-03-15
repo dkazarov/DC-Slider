@@ -3,13 +3,22 @@
 const slides = document.querySelectorAll('.slider__img-inner');
 const btnPrev = document.querySelector('.btnPrev');
 const btnNext = document.querySelector('.btnNext');
+const slider = document.querySelector('.slider');
 
-let slideIndex = 2;
+const hero = [
+  'https://c4.wallpaperflare.com/wallpaper/282/685/305/batman-v-superman-dawn-of-justice-superman-wallpaper-preview.jpg',
+  'https://cdn.wallscloud.net/converted/555337960-the-flash-season-2-Rg8K-1920x1080-MM-100.jpg',
+  'https://cdn.wallscloud.net/converted/4245393651-batman-in-batcave-gK76-1920x1080-MM-100.jpg',
+  'https://wallscloud.net/uploads/cache/2167957366/822A92FA-EE50-4E75-AFE0-F024AFD6F895-1024x576-MM-90.jpeg',
+];
 
-const showSlides = () => {
+let slideIndex = 0;
+
+const showSlides = (index, img) => {
   slides.forEach(elem => (elem.style.display = 'none'));
 
-  slides[slideIndex].style.display = 'block';
+  slides[index].style.display = 'block';
+  slider.style.backgroundImage = `url(${hero[slideIndex]})`;
 };
 
 btnPrev.addEventListener('click', () => {
@@ -18,13 +27,22 @@ btnPrev.addEventListener('click', () => {
   }
   if (slideIndex > 0) {
     showSlides((slideIndex -= 1));
+    slider.style.backgroundImage = `url(${hero[slideIndex]})`;
+    localData();
   }
 });
 
 btnNext.addEventListener('click', () => {
   if (slideIndex < slides.length - 1) {
-    showSlides(slideIndex += 1);
+    showSlides((slideIndex += 1));
+    slider.style.backgroundImage = `url(${hero[slideIndex]})`;
+    localData()
   }
 });
 
-showSlides(slideIndex);
+function localData () {
+  localStorage.setItem('hero', slideIndex);
+  localStorage.getItem('hero', slideIndex);
+}
+
+showSlides(slideIndex, hero[0]);

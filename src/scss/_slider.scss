@@ -1,30 +1,72 @@
 .slider {
+  min-height: 100vh;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    min-height: 100vh;
+    position: relative;
+  }
   &__inner {
-    padding-top: 5%;
+    padding: 10% 0;
   }
   &__img-inner {
-    margin-bottom: 5%;
-    min-width: 300px;
+
   }
   &__img {
-    height: 80vh;
-    border-radius: 25px;
+    transition: 1s all;
+    display: block;
     margin: 0 auto;
+    border: 1px solid #fff;
+    max-height: 80vh;
+    border-radius: 25px;
     object-fit: cover;
+    &:hover {
+      transition: 1s all;
+      transform: scale(1.05);
+    }
   }
 }
 .container {
   max-width: 800px;
 }
 .slider__btn-inner {
-  display: flex;
-  justify-content: space-between;
-  max-width: 250px;
-  margin: 0 auto;
 }
 .btnPrev {
-  padding: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%, -50%);
+  left: 250px;
+  background-color: transparent;
+  border: none;
+  & svg {
+    width: 48px;
+    height: 48px;
+    & path {
+      fill: rgba(255, 255, 255, 0.5);
+    }
+  }
 }
 .btnNext {
-  padding: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%, -50%);
+  right: 250px;
+  background-color: transparent;
+  border: none;
+  & svg {
+    width: 48px;
+    height: 48px;
+    & path {
+      fill: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+.hero {
+}
+
+.active {
+  transition: 5s all;
+  transition-delay: 2s;
 }

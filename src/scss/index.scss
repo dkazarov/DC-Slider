@@ -1,16 +1,15 @@
-@import "normalize";
-@import "mini-reset";
-@import "slider";
+@import 'normalize';
+@import 'mini-reset';
+@import 'slider';
 
 body {
   min-width: 320px;
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  background-color: crimson;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 15px;
 }
